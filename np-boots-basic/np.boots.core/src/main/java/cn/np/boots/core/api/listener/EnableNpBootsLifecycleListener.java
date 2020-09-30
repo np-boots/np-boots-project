@@ -9,7 +9,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 @Documented
-@Import(NpBootsApplicationLifecycle.class)
 @Repeatable(EnableNpBootsLifecycleListenerRepeatable.class)
 public @interface EnableNpBootsLifecycleListener {
     public static final String PROPERTY_ORDER = "order";

@@ -12,6 +12,7 @@
         <module>np-boots-test</module>
         <module>np-boots-build</module>
         <module>np-boots-basic</module>
+        <module>np-boots-plugin</module>
     </modules>
 
 

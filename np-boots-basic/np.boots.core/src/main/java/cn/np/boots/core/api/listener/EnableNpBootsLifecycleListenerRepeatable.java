@@ -9,7 +9,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 @Documented
-@Import(NpBootsApplicationLifecycle.class)
 public @interface EnableNpBootsLifecycleListenerRepeatable {
 
     EnableNpBootsLifecycleListener[] value();

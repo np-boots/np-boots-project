@@ -1,0 +1,1 @@
+org.springframework.context.ApplicationContextInitializer=cn.np.boots.core.kernel.runtime.process.NpKernelRuntimeInitializer

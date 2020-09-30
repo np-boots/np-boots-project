@@ -12,4 +12,11 @@
     <artifactId>np-boots-test</artifactId>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>cn.np</groupId>
+            <artifactId>np.boots.core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
