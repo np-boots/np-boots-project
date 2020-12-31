@@ -15,6 +15,6 @@ public class ContainerBeanFactoryPostProcessor implements BeanFactoryPostProcess
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        System.out.println(this.container.getRuntime().getApplicationContext().getSpringApplicationContext().getDisplayName()+ ":ContainerBeanFactoryPostProcessor");
+       // System.out.println(this.container.getRuntime().getApplicationContext().getSpringApplicationContext().getDisplayName()+ ":ContainerBeanFactoryPostProcessor");
     }
 }

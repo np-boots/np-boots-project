@@ -16,7 +16,7 @@ public class ContainerApplicationContextStarted implements ApplicationListener {
     @Override
     public void onApplicationEvent(ApplicationEvent event) {
         if(event instanceof ContextStartedEvent) {
-            System.out.println(((ContextRefreshedEvent) event).getApplicationContext().getDisplayName() + ":ContainerApplicationContextStarted");
+          //  System.out.println(((ContextRefreshedEvent) event).getApplicationContext().getDisplayName() + ":ContainerApplicationContextStarted");
         }
     }
 }

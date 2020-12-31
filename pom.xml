@@ -13,7 +13,22 @@
         <module>np-boots-build</module>
         <module>np-boots-basic</module>
         <module>np-boots-plugin</module>
+        <module>np-boots-component</module>
     </modules>
 
 
+    <profiles>
+       <profile>
+           <id>jdk-1.8</id>
+           <activation>
+               <activeByDefault>true</activeByDefault>
+               <jdk>1.8</jdk>
+           </activation>
+           <properties>
+               <maven.compiler.source>1.8</maven.compiler.source>
+               <maven.compiler.target>1.8</maven.compiler.target>
+               <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+           </properties>
+       </profile>
+    </profiles>
 </project>

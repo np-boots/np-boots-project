@@ -21,10 +21,6 @@ public class NpKernelRoot {
     public void start() {
         NpKernelContainerProperties containerProperties = new NpKernelContainerProperties();
         this.main = new NpKernelStandardContainer(this,containerProperties);
-
-
-        System.out.println("**************************************************************************************");
-
         NpKernelContainer moduleContainer = new NpKernelModuleContainer(this,containerProperties);
         moduleContainer.initialize().refresh().start();
     }

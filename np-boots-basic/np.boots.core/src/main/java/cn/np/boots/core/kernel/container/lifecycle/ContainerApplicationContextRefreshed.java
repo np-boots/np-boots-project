@@ -15,7 +15,7 @@ public class ContainerApplicationContextRefreshed implements ApplicationListener
     @Override
     public void onApplicationEvent(ApplicationEvent event) {
         if(event instanceof ContextRefreshedEvent){
-            System.out.println(((ContextRefreshedEvent) event).getApplicationContext().getDisplayName() + ":ContainerApplicationContextRefreshed");
+           // System.out.println(((ContextRefreshedEvent) event).getApplicationContext().getDisplayName() + ":ContainerApplicationContextRefreshed");
         }
     }
 }

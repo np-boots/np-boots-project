@@ -11,5 +11,12 @@
     <packaging>maven-plugin</packaging>
     <artifactId>np.boots.plugin.maven.pkg.container</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>cn.np</groupId>
+            <artifactId>np.boots.common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
