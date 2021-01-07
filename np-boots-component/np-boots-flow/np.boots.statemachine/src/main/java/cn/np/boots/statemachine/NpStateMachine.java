@@ -1,9 +1,11 @@
 package cn.np.boots.statemachine;
 
-public interface NpStateMachine<State, Event, Ctx> extends NpStateMachineSelfVerify {
+public interface NpStateMachine<State, Transition, Event, Input, Ctx> extends NpStateMachineSelfVerify {
     String getMachineId();
 
-    State fire(State source, Event event, Ctx ctx);
+    State fire(State source, Event event, Input input, Ctx ctx);
 
-    NpStateMachine<State, Event, Ctx> registerTransition(NpStateMachineTransition<State, Event, Ctx> transition);
+    void storage(NpStateMachineStorage<State, Transition, Event, Input, Ctx> storage);
+
+//    NpStateMachine<State, Transition, Event, Input, Ctx> registerTransition(NpStateMachineTransition<State, Transition, Event, Input, Ctx> transition);
 }

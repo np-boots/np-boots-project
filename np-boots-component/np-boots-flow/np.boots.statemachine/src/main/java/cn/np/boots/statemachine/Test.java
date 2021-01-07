@@ -1,12 +1,35 @@
 package cn.np.boots.statemachine;
 
+import cn.np.boots.statemachine.api.NpStateMachineStructureBuilder;
+import lombok.Data;
+
+import java.util.Objects;
+
 public class Test {
     static enum States {
         STATE1, STATE2, STATE3, STATE4
     }
+    @Data
+    static class InputEvent {
+        private String event;
+        private String input;
 
-    static enum Events {
-        EVENT1, EVENT2, EVENT3, EVENT4, INTERNAL_EVENT
+        public InputEvent(String event){
+            this.event = event;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            InputEvent that = (InputEvent) o;
+            return event.equals(that.event);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(event);
+        }
     }
 
     static class Context {
@@ -14,15 +37,13 @@ public class Test {
         String entityId = "123465";
     }
 
-    static class TrueStateMachineCondition implements StateMachineCondition<Context> {
+    static class TrueStateMachineCondition implements NpStateMachineCondition<InputEvent,Context> {
         @Override
-        public boolean isSatisfied(Context context) {
-            return true;
-        }
-
-        @Override
-        public String name() {
-            return "true";
+        public boolean isSatisfied(InputEvent events, Context context) {
+            if(events.input == "1") {
+                return true;
+            }
+            else return false;
         }
     }
 
@@ -30,14 +51,21 @@ public class Test {
         TrueStateMachineCondition alwaysTrue = new TrueStateMachineCondition();
         Context context = new Context();
 
-        StateMachineStructureBuilder<States, Events, Context> builder = StateMachineBuilderFactory.structure();
+        InputEvent inputEvent = new InputEvent("Test");
+        String event = "trigger-event";
 
-        builder.transition().from(States.STATE1).to(States.STATE2).on(Events.EVENT1).when(alwaysTrue).perform((from, to, event, ctx) -> {
+
+        NpStateMachineBuilder<States,String, InputEvent, Context> builder = new NpStateMachineStructureBuilder();
+
+        builder.transition().from(States.STATE1).to(States.STATE2).on(event).when(alwaysTrue).perform((from, to, evt,input, ctx) -> {
             System.out.println(from);
         });
 
-        StateMachine<States, Events, Context> stateMachine = builder.build("test");
+        NpStateMachine<States,String, InputEvent, Context> stateMachine = builder.build("test");
 
-        stateMachine.fire(States.STATE1,Events.EVENT1,context);
+        InputEvent inputEvent2 = new InputEvent("Test");
+        inputEvent2.setInput("1");
+
+        stateMachine.fire(States.STATE1,event,inputEvent2,context);
     }
 }
