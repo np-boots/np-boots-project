@@ -12,11 +12,6 @@ public class NpMealyStateMachineState<State,Transition> implements NpStateMachin
     private State stateId;
     private List<Transition> transitions = new ArrayList<>();
 
-
-    public NpMealyStateMachineState(){
-
-    }
-
     @Override
     public State getId() {
         return this.stateId;

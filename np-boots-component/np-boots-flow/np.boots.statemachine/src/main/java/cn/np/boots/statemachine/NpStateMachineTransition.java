@@ -7,23 +7,23 @@ public interface NpStateMachineTransition<State, Trans, Event, Input, Ctx>
 
     State getSourceId();
 
-    void setSourceId(State stateId);
+//    void setSourceId(State stateId);
 
-    NpStateMachineState<State, Event, Input, Ctx> getSource();
+//    NpStateMachineState<State, Event, Input, Ctx> getSource();
 
-    void setSource(NpStateMachineState<State, Event, Input, Ctx> state);
+//    void setSource(NpStateMachineState<State, Event, Input, Ctx> state);
 
     Event getEvent();
 
-    void setEvent(Event event);
+//    void setEvent(Event event);
 
     State getTargetId();
 
-    void setTargetId(State stateId);
+//    void setTargetId(State stateId);
 
-    NpStateMachineState<State, Event, Input, Ctx> getTarget();
+//    NpStateMachineState<State, Event, Input, Ctx> getTarget();
 
-    void setTarget(NpStateMachineState<State, Event, Input, Ctx> state);
+//    void setTarget(NpStateMachineState<State, Event, Input, Ctx> state);
 
 //    NpStateMachineCondition<Event, Ctx> getCondition();
 //

@@ -1,6 +1,7 @@
 package cn.np.boots.exception;
 
 public class NpRuntimeException extends RuntimeException {
+
     public NpRuntimeException(String msg) {
         super(msg);
     }
@@ -12,4 +13,6 @@ public class NpRuntimeException extends RuntimeException {
     public NpRuntimeException(Exception e, String msg) {
         super(msg, e);
     }
+
+
 }

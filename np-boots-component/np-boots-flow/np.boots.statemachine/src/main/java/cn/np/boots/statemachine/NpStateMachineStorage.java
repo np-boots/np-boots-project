@@ -4,15 +4,15 @@ import cn.np.boots.statemachine.api.expcetion.NpStateMachineException;
 
 public interface NpStateMachineStorage<State, Transition, Event, Input, Ctx> {
 
-    default NpStateMachineState<State, Transition, Event, Input, Ctx> assertLoadState(State state) {
-        NpStateMachineState<State, Transition, Event, Input, Ctx> stateMachineState = this.loadState(state);
+    default NpStateMachineState<State,Transition> assertLoadState(State state) {
+        NpStateMachineState<State,Transition> stateMachineState = this.loadState(state);
         if (stateMachineState == null) {
             throw new NpStateMachineException("StateMachine storage can not load state : " + state.toString());
         }
         return stateMachineState;
     }
 
-    NpStateMachineState<State, Transition, Event, Input, Ctx> loadState(State state);
+    NpStateMachineState<State,Transition> loadState(State state);
 
     default NpStateMachineTransition<State, Transition, Event, Input, Ctx> assertLoadTransition(Transition transition){
         NpStateMachineTransition<State, Transition, Event, Input, Ctx> stateMachineTransition = this.loadTransition(transition);

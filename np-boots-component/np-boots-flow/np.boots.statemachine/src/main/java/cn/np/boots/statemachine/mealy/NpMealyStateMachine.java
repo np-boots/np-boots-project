@@ -31,7 +31,7 @@ public class NpMealyStateMachine<State, Transition, Event, Input, Ctx> implement
             throw new NpStateMachineException("StateMachine is not ready: storage can not be null ");
         }
 
-        NpStateMachineState<State, Transition, Event, Input, Ctx> sourceState = storage.assertLoadState(source);
+        NpStateMachineState<State,Transition> sourceState = storage.assertLoadState(source);
         List<Transition> transitions = sourceState.transitions();
         if (!NpUtils.type().collection().isEmpty(transitions)) {
             for (Transition transition : transitions) {

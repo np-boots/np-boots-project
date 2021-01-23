@@ -7,7 +7,7 @@ import cn.np.boots.statemachine.NpStateMachineTransition;
 import cn.np.boots.statemachine.api.NpStateMachineTransitionAction;
 import cn.np.boots.statemachine.mealy.NpMealyStateMachineTransition;
 
-public class NpMealyTransitionBuilder<State, Event,Input, Ctx>
+public class NpMealyTransitionBuilder<State,Transition, Event,Input, Ctx>
         implements NpStateMachineTransitionAction.Init<State, Event,Input, Ctx>, NpStateMachineTransitionAction.From<State, Event,Input, Ctx>,
         NpStateMachineTransitionAction.To<State, Event,Input, Ctx>, NpStateMachineTransitionAction.On<State, Event,Input, Ctx>, NpStateMachineTransitionAction.When<State, Event,Input, Ctx> {
 
